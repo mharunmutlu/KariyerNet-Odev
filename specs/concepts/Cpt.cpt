@@ -1,0 +1,34 @@
+# Kariyernet aday kayıt sayfasyına git
+* "https://www.kariyer.net/aday/uyeol" adresine git
+* "2" saniye bekle
+
+# Ad <Ad> Soyad <Soyad> alanlarını doldur
+* Elementin yüklenmesini bekle "First-Name"
+* <Ad> textini "First-Name" elemente yaz
+* Elementin yüklenmesini bekle "Last-Name"
+* <Soyad> textini "Last-Name" elemente yaz
+
+# E-posta Adresi <eposta> alanını doldur
+* Elementin yüklenmesini bekle "Email"
+* <eposta> textini "Email" elemente yaz
+
+# Şifre  <şifre> alanını doldur
+* Elementin yüklenmesini bekle "Password"
+* <şifre> textini "Password" elemente yaz
+
+# Hizmet sözleşmesini kabul et
+* Elementin yüklenmesini bekle "Hizmet-Sozlesmesi"
+* Elementine tıkla "Hizmet-Sozlesmesi"
+* Wait "1" seconds
+* Elementin yüklenmesini bekle "Accept-Btn"
+* Elementine tıkla "Accept-Btn"
+
+# Üyeliği oluştur
+* Elementin yüklenmesini bekle "Create-Membership"
+* Elementine tıkla "Create-Membership"
+* Elementin yüklenmesini bekle "Accept-Btn"
+* Elementine tıkla "Accept-Btn"
+
+# <error> Alanı <içeriyor> Kontrol et
+* Elementin yüklenmesini bekle <error>
+* <error> elementi <içeriyor> değerini içeriyor mu kontrol et

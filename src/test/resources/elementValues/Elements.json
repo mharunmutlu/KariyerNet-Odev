@@ -1,0 +1,59 @@
+[
+  {
+    "key": "First-Name",
+    "value":"name",
+    "type": "id"
+  },{
+  "key": "Last-Name",
+  "value":"lastName",
+  "type": "id"
+},{
+  "key": "Email",
+  "value":"email",
+  "type": "id"
+},{
+  "key": "Password",
+  "value":"password",
+  "type": "id"
+},{
+  "key": "Hizmet-Sozlesmesi",
+  "value":"//a[@class='serviceContractPopup']",
+  "type": "xpath"
+},{
+  "key": "Accept-Btn",
+  "value":"btnModalYesCallback",
+  "type": "id"
+},{
+  "key": "Create-Membership",
+  "value":"//button[contains(text(), 'ÜYELİĞİNİ OLUŞTUR')]",
+  "type": "xpath"
+},{
+  "key": "Captha",
+  "value":"div[class='recaptcha-checkbox-border']",
+  "type": "css"
+},{
+  "key": "Name-Error",
+  "value":"name-error",
+  "type": "id"
+},{
+  "key": "LastName-Error",
+  "value":"lastName-error",
+  "type": "id"
+},{
+  "key": "Email-Error",
+  "value":"email-error",
+  "type": "id"
+},{
+  "key": "Password-Error",
+  "value":"password-error",
+  "type": "id"
+},{
+  "key": "Hizmet-Kontrol",
+  "value":"//div[@class='col-12 error']",
+  "type": "xpath"
+},{
+  "key": "",
+  "value":"",
+  "type": ""
+}
+]
