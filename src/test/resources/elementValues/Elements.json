@@ -1,7 +1,7 @@
 [{
-    "key": "First-Name",
-    "value":"name",
-    "type": "id"
+  "key": "First-Name",
+  "value":"name",
+  "type": "id"
   },{
   "key": "Last-Name",
   "value":"lastName",
@@ -50,9 +50,4 @@
   "key": "Hizmet-Kontrol",
   "value":"//div[@class='col-12 error']",
   "type": "xpath"
-},{
-  "key": "",
-  "value":"",
-  "type": ""
-}
 ]
