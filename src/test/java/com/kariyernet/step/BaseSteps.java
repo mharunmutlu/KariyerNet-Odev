@@ -197,8 +197,8 @@ public class BaseSteps extends BaseTest {
     }
 
     @Step("<key> elementin üstünde bekle")
-    public void hover(String key){
-            hoverElement(findElement(key));
+    public void hover(String key) {
+        hoverElement(findElement(key));
 
     }
 
@@ -318,7 +318,7 @@ public class BaseSteps extends BaseTest {
             "<text> textini <key> elemente yaz"})
     public void ssendKeys(String text, String key) {
         if (!key.equals("")) {
-            WebElement element=findElement(key);
+            WebElement element = findElement(key);
             element.clear();
             element.sendKeys(text);
             logger.info(key + " elementine " + text + " texti yazıldı.");
@@ -329,7 +329,7 @@ public class BaseSteps extends BaseTest {
             "<text> textini <key> elemente silmeden yaz"})
     public void ssendKeysWithoutDelete(String text, String key) {
         if (!key.equals("")) {
-            WebElement element=findElement(key);
+            WebElement element = findElement(key);
 
             element.sendKeys(text);
             logger.info(key + " elementine " + text + " texti yazıldı.");
@@ -337,10 +337,10 @@ public class BaseSteps extends BaseTest {
     }
 
     @Step("<key> DropDownumdan <text> SeceneginiSec")
-    public void dropdownChoice(String key,String text){
+    public void dropdownChoice(String key, String text) {
         findElement(key).click();
         waitByMilliSeconds(500);
-        findElementWithXpath("//*[@role=\"listbox\" and @aria-hidden=\"false\"]//*[.='"+text+"']").click();
+        findElementWithXpath("//*[@role=\"listbox\" and @aria-hidden=\"false\"]//*[.='" + text + "']").click();
         waitByMilliSeconds(500);
     }
 
@@ -520,9 +520,9 @@ public class BaseSteps extends BaseTest {
     @Step({"Check if element <key> contains text <expectedText>",
             "<key> elementi <text> değerini içeriyor mu kontrol et"})
     public void checkElementContainsText(String key, String expectedText) {
-        logger.info("Beklenen Text: "+expectedText);
-        String actualText=findElement(key).getText();
-        logger.info("Actual Text: "+actualText);
+        logger.info("Beklenen Text: " + expectedText);
+        String actualText = findElement(key).getText();
+        logger.info("Actual Text: " + actualText);
 
         Boolean containsText = actualText.contains(expectedText) || expectedText.contains(actualText);
         assertTrue("Expected text is not contained", containsText);
@@ -564,7 +564,6 @@ public class BaseSteps extends BaseTest {
         driver.navigate().refresh();
     }
 
-
     @Step({"Change page zoom to <value>%",
             "Sayfanın zoom değerini değiştir <value>%"})
     public void chromeZoomOut(String value) {
@@ -605,10 +604,7 @@ public class BaseSteps extends BaseTest {
         driver.switchTo().alert().accept();
     }
 
-
     //----------------------SONRADAN YAZILANLAR-----------------------------------\\
-
-
     // Key değeri alınan listeden rasgele element seçme amacıyla yazılmıştır. @Mehmetİnan
     public void randomPick(String key) {
         List<WebElement> elements = findElements(key);
@@ -643,14 +639,11 @@ public class BaseSteps extends BaseTest {
         return webElement;
     }
 
-
     @Step({"<key> alanına kaydır"})
     public void scrollToElement(String key) {
         scrollToElementToBeVisible(key);
         logger.info(key + " elementinin olduğu alana kaydırıldı");
-
     }
-
 
     @Step({"<key> alanına js ile kaydır"})
     public void scrollToElementWithJs(String key) {
@@ -659,11 +652,9 @@ public class BaseSteps extends BaseTest {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
     }
 
-
     @Step({"<length> uzunlugunda random bir kelime üret ve <saveKey> olarak sakla"})
     public void createRandomString(int length, String saveKey) {
         StoreHelper.INSTANCE.saveValue(saveKey, randomString(length));
-
     }
 
     @Step({"<key> li elementi bul ve değerini <saveKey> saklanan degeri yazdir",
@@ -678,7 +669,6 @@ public class BaseSteps extends BaseTest {
                 element.clear();
                 StoreHelper.INSTANCE.getValue(saveKey);
                 element.sendKeys(StoreHelper.INSTANCE.getValue(saveKey));
-
                 break;
             } else {
                 waitVar = waitVar + 1;
@@ -704,7 +694,6 @@ public class BaseSteps extends BaseTest {
         WebElement webElement = findElementWithKey(key);
         webElement.clear();
         webElement.sendKeys("testotomasyon" + timestamp + "@sahabt.com");
-
     }
 
     @Step("<key> olarak <text> seçersem")
@@ -719,8 +708,6 @@ public class BaseSteps extends BaseTest {
             }
         }
         logger.info(key + " comboboxından " + text + " değeri seçildi");
-
-
     }
 
     @Step("<key> olarak comboboxdan bir değer seçilir")
@@ -735,7 +722,6 @@ public class BaseSteps extends BaseTest {
 
     }
 
-
     @Step("Url bilgisi <url> ve <path> bilgilerini gir ve  get  isteği yap")
     public void SendGetRequest(String path, String url) {
         RestAssured.baseURI = url;
@@ -744,10 +730,9 @@ public class BaseSteps extends BaseTest {
     }
 
     @Step("Assertion fail")
-    public void faill(){
+    public void faill() {
         Assert.fail("fail mesajı");
     }
-
 
     //Sipariş numarasını substring methoduyla elde etmek için yazılmıştır.
     public String choosePatternNo(String key) {
@@ -757,7 +742,6 @@ public class BaseSteps extends BaseTest {
         return quoteNumber;
     }
 
-
     @Step("<key> elementine javascript ile tıkla")
     public void clickToElementWithJavaScript(String key) {
         WebElement element = findElement(key);
@@ -766,14 +750,14 @@ public class BaseSteps extends BaseTest {
     }
 
     @Step("enter tusuna bas")
-    public void presssEnter(){
+    public void presssEnter() {
         findElement("ddtxtbox").sendKeys(Keys.ENTER);
 
     }
 
     @Step("<text> texti sayfada bulunuyormu")
-    public void PageContainsText(String text){
-        findElementWithXpath("//*[.='"+text+"']");
+    public void PageContainsText(String text) {
+        findElementWithXpath("//*[.='" + text + "']");
     }
 
     @Step("Aktif Taba geç")
@@ -800,7 +784,6 @@ public class BaseSteps extends BaseTest {
         }
     }
 
-
     //Çift tıklama fonksiyonu
     public void doubleclick(WebElement elementLocator) {
         Actions actions = new Actions(driver);
@@ -812,7 +795,6 @@ public class BaseSteps extends BaseTest {
         WebElement element = findElement(key);
         ((JavascriptExecutor) driver).executeScript("arguments[0].value ='';", element);
     }
-
 
     @Step("<key> elementleri arasından <text> kayıtlı değişkene tıkla")
     public void clickParticularElement(String key, String text) {
@@ -834,7 +816,6 @@ public class BaseSteps extends BaseTest {
             randomPick(key);
     }
 
-
     @Step("<key> olarak <index> indexi seçersem")
     public void choosingIndexFromDemandNo(String key, String index) {
 
@@ -850,7 +831,6 @@ public class BaseSteps extends BaseTest {
         WebElement anchor = anchors.get(Integer.parseInt(index));
         anchor.click();
     }
-
 
     @Step("Siparis durmununu <kartDurumu> elementinden bul")
     public void findOrderStatus(String kartDurumu) throws InterruptedException {
@@ -890,7 +870,6 @@ public class BaseSteps extends BaseTest {
         logger.info(key + " elementine " + text + " değeri js ile yazıldı.");
     }
 
-
     //Bugünün Tarihinin seçilmesi
     public String chooseDate() {
         Calendar now = Calendar.getInstance();
@@ -917,7 +896,6 @@ public class BaseSteps extends BaseTest {
         }
     }
 
-
     @Step("<key> olarak comboboxtan <text> seçimini yap")
     public void selectDropDown(String key, String text) {
         Select drpCountry = new Select(findElement(key));
@@ -925,33 +903,32 @@ public class BaseSteps extends BaseTest {
     }
 
     @Step("<dropDownName> Dropdownundan <choice> Degerini seç")
-    public void DropDownChoice(String dropDownName,String choice){
-        logger.info(dropDownName+" Dropdownundan: "+choice+" Degeri Seçiliyor");
-        String dropDownXpath="//*[text()='"+dropDownName+"']/..//*[@class=\"ember-power-select-trigger ember-basic-dropdown-trigger ember-view\" or @class=\"ember-power-select-trigger ember-power-select-multiple-trigger ember-basic-dropdown-trigger ember-view\"]//*[@class=\"ember-power-select-status-icon\"]";
-        String dropDownTextBar="//*[@class=\"ember-power-select-search-input\" or @class=\"ember-power-select-trigger-multiple-input\"]";
+    public void DropDownChoice(String dropDownName, String choice) {
+        logger.info(dropDownName + " Dropdownundan: " + choice + " Degeri Seçiliyor");
+        String dropDownXpath = "//*[text()='" + dropDownName + "']/..//*[@class=\"ember-power-select-trigger ember-basic-dropdown-trigger ember-view\" or @class=\"ember-power-select-trigger ember-power-select-multiple-trigger ember-basic-dropdown-trigger ember-view\"]//*[@class=\"ember-power-select-status-icon\"]";
+        String dropDownTextBar = "//*[@class=\"ember-power-select-search-input\" or @class=\"ember-power-select-trigger-multiple-input\"]";
         findElementWithXpath(dropDownXpath).click();
         findElementWithXpath(dropDownTextBar).sendKeys(choice);
         findElementWithXpath(dropDownTextBar).sendKeys(Keys.ENTER);
     }
 
     @Step("<textBoxName> İsimli TextBoxa <text> Degerini yaz")
-    public void writeTextbox(String textBoxName,String text){
-        logger.info(textBoxName+" TextBoxa: "+text+" Degeri yazılıyor");
-        String textBoxXpath="//*[text()='"+textBoxName+"']/..//*[@class=\"ember-text-field form-control ember-view\"]";
+    public void writeTextbox(String textBoxName, String text) {
+        logger.info(textBoxName + " TextBoxa: " + text + " Degeri yazılıyor");
+        String textBoxXpath = "//*[text()='" + textBoxName + "']/..//*[@class=\"ember-text-field form-control ember-view\"]";
         findElementWithXpath(textBoxXpath).sendKeys(text);
     }
 
     @Step("<celendarName> Takviminen <tarih> degerini seç")
-    public void celendar(String celendarName, String tarih){
-        String celendarXpath="//*[text()='"+celendarName+"']/..//*[@class=\"date-component-icon\"]";
+    public void celendar(String celendarName, String tarih) {
+        String celendarXpath = "//*[text()='" + celendarName + "']/..//*[@class=\"date-component-icon\"]";
         findElementWithXpath(celendarXpath).click();
-        String[] date=tarih.split("\\.");
+        String[] date = tarih.split("\\.");
         findElement("TarihYılDropDown").click();
-        findElementWithXpath("//*[@class=\"date-picker__header__select__content\"]//*[text()='"+date[2]+"']").click();
+        findElementWithXpath("//*[@class=\"date-picker__header__select__content\"]//*[text()='" + date[2] + "']").click();
         findElement("TarihAyDropDown").click();
-        findElementWithXpath("//*[@class=\"date-picker__header__select__content\"]//*[text()='"+date[1]+"']").click();
-        findElementWithXpath("//*[@class=\"date-picker__calendar__outer ember-view\"]//*[text()='"+date[0]+"']").click();
+        findElementWithXpath("//*[@class=\"date-picker__header__select__content\"]//*[text()='" + date[1] + "']").click();
+        findElementWithXpath("//*[@class=\"date-picker__calendar__outer ember-view\"]//*[text()='" + date[0] + "']").click();
 
     }
-
 }

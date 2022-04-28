@@ -3,8 +3,7 @@ package com.kariyernet.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class ElementInfo
-{
+public class ElementInfo {
     @SerializedName("key")
     @Expose
     private String key;
@@ -18,7 +17,7 @@ public class ElementInfo
     @Expose
     private int index;
 
-    public ElementInfo(){
+    public ElementInfo() {
 
     }
 

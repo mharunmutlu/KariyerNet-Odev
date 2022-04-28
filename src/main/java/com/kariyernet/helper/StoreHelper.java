@@ -71,5 +71,4 @@ public enum StoreHelper
     public String getValue(String key) {
         return elementMapList.get(key).toString();
     }
-
 }
