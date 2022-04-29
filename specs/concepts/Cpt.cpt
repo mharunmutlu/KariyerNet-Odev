@@ -26,6 +26,7 @@
 # Üyeliği oluştur
 * Elementin yüklenmesini bekle "Create-Membership"
 * Elementine tıkla "Create-Membership"
+* Wait "2" seconds
 * Elementin yüklenmesini bekle "Accept-Btn"
 * Elementine tıkla "Accept-Btn"
 

@@ -46,8 +46,10 @@
   "key": "Password-Error",
   "value":"password-error",
   "type": "id"
-},{
-  "key": "Hizmet-Kontrol",
-  "value":"//div[@class='col-12 error']",
-  "type": "xpath"
+},
+  {
+    "key": "Hizmet-Kontrol",
+    "value": "//div[@class='col-12 error']",
+    "type": "xpath"
+  }
 ]

@@ -4,7 +4,7 @@ Başarılı kayıt
 ------------
 * Kariyernet aday kayıt sayfasyına git
 * Ad "Mehmet Harun" Soyad "Mutlu" alanlarını doldur
-* E-posta Adresi "amhmutlu2@outlook.com" alanını doldur
+* E-posta Adresi "pavabo8213@topyte.com" alanını doldur
 * Şifre  "Mh_654321" alanını doldur
 * Hizmet sözleşmesini kabul et
 * Üyeliği oluştur
